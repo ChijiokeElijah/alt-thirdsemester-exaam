@@ -15,9 +15,11 @@ export default createRouter({
       path: "/counter",
       component: Counter,
     },
-    {
-      path: "/:pathMatch(.*)*",
-      component: Error,
-    },
+    // {
+    //   path: "/:pathMatch(.*)*",
+    //   component: Error,
+    // },
+    {path: '/404', name: 'page-not-found', component: Error},
+    {path: '/:catchAll(.*)', redirect: '/404'}
   ], // short for `routes: routes`
 });
